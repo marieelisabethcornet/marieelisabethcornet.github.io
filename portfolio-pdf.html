@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portfolio PDF – Ton Nom</title>
+
+    <!-- Bootstrap + Resume CSS du template -->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation latérale (même que dans index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">
+            <span class="d-block d-lg-none">Ton Nom</span>
+            <span class="d-none d-lg-block">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                     src="assets/img/profile.jpg" alt="Photo" />
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Ajouter un lien vers la nouvelle page ici -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio-pdf.html">Portfolio PDF</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container-fluid p-0">
+
+        <section class="resume-section" id="portfolioPDF">
+            <div class="resume-section-content">
+                <h1 class="mb-0">Portfolio <span class="text-primary">PDF</span></h1>
+
+                <p class="lead mb-4">
+                    Voici mon portfolio complet (41 pages).  
+                    Vous pouvez le consulter directement ci-dessous ou le télécharger.
+                </p>
+
+                <!-- Bouton de téléchargement -->
+                <a class="btn btn-primary mb-4"
+                   href="assets/pdf/MonPortfolio.pdf" target="_blank">
+                    Télécharger le PDF
+                </a>
+
+                <!-- Visualisation PDF intégrée -->
+                <div style="border: 1px solid #ddd; height: 85vh;">
+                    <iframe src="assets/pdf/MonPortfolio.pdf"
+                            width="100%" height="100%" style="border: none;">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts du template -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
