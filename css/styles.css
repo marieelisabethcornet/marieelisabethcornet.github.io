@@ -10970,3 +10970,8 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* Fix: prevent unwanted horizontal scroll / extra right margin */
+html, body {
+  overflow-x: hidden;
+}
