@@ -10958,7 +10958,7 @@ p.lead {
     background-position: center;
     background-repeat: no-repeat;
     /* desaturate and darken slightly to get a 'grisée' look */
-    filter: grayscale(0.30) brightness(0.50);
+    filter: grayscale(0.30 ) brightness(0.50);
     /* fallback color when image missing */
     background-color: rgba(189,56,56,1);
   }
@@ -10970,6 +10970,38 @@ p.lead {
     z-index: 1;
   }
 }
+
+/* Mobile: remplacer le fond rouge par une image (img4) et masquer la photo de profil */
+@media (max-width: 991.98px) {
+  nav#sideNav {
+    background-color: transparent !important;
+    position: relative;
+    overflow: hidden;
+  }
+  nav#sideNav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/assets/img/images/img4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* désaturer et assombrir légèrement pour du texte lisible */
+    filter: grayscale(30%) brightness(0.6);
+  }
+  nav#sideNav > *,
+  nav#sideNav .navbar-brand,
+  nav#sideNav .navbar-collapse {
+    position: relative;
+    z-index: 1;
+  }
+  /* masquer la petite photo de profil sur mobile (on utilise l'image en fond) */
+  nav#sideNav .navbar-brand .img-profile {
+    display: none;
+  }
+}
+
 .social-icons .social-icon {
   display: inline-flex;
   align-items: center;
