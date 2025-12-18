@@ -28,7 +28,19 @@ window.addEventListener('DOMContentLoaded', event => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }
+            // remove focus after click to avoid persistent highlight
+            setTimeout(() => { responsiveNavItem.blur(); }, 100);
         });
+    });
+
+    // Ensure only one nav-link remains active; fix cases where first link stays highlighted
+    document.addEventListener('activate.bs.scrollspy', function () {
+        const activeLink = document.querySelector('#sideNav .nav-link.active');
+        if (activeLink) {
+            document.querySelectorAll('#sideNav .nav-link').forEach(l => {
+                if (l !== activeLink) l.classList.remove('active');
+            });
+        }
     });
 
 });

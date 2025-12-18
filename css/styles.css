@@ -10871,6 +10871,25 @@ p.lead {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+#/* Background image (fallback to an existing portfolio image if side-bg.jpg missing) */
+#sideNav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/assets/img/side-bg.jpg'), url('/assets/img/portfolio/Portfolio_page-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(60%) brightness(0.85);
+  background-color: rgba(189,56,56,0.12);
+}
+#sideNav > *,
+#sideNav .navbar-brand,
+#sideNav .navbar-collapse {
+  position: relative;
+  z-index: 1;
+}
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
@@ -10878,6 +10897,12 @@ p.lead {
 }
 #sideNav .navbar-toggler:focus {
   outline-color: #d48a6e;
+}
+
+/* Remove focus outline on sidebar links to prevent persistent highlight */
+#sideNav .nav-link:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 @media (min-width: 992px) {
@@ -10892,6 +10917,8 @@ p.lead {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
+    /* make room for background image via pseudo-element */
+    background-color: transparent !important;
   }
   #sideNav .navbar-brand {
     display: flex;
@@ -10919,6 +10946,28 @@ p.lead {
   }
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
+  }
+  /* Background image for the left banner (slightly greyed) */
+  #sideNav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/assets/img//images/img4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* desaturate and darken slightly to get a 'grisée' look */
+    filter: grayscale(0.30) brightness(0.50);
+    /* fallback color when image missing */
+    background-color: rgba(189,56,56,1);
+  }
+  /* Keep the nav content above the background image */
+  #sideNav > *,
+  #sideNav .navbar-brand,
+  #sideNav .navbar-collapse {
+    position: relative;
+    z-index: 1;
   }
 }
 .social-icons .social-icon {
