@@ -10919,6 +10919,33 @@ p.lead {
     height: 100vh;
     /* make room for background image via pseudo-element */
     background-color: transparent !important;
+    transition: transform 0.3s ease;
+    transform: translateX(-14.5rem);
+  }
+  #sideNav:hover {
+    transform: translateX(0);
+  }
+  /* Ajuster le body pour créer l'espace */
+  body {
+    transition: padding-left 0.3s ease;
+    padding-left: 2.5rem;
+  }
+  body:has(#sideNav:hover) {
+    padding-left: 17rem;
+  }
+  /* Zone invisible au bord gauche pour déclencher le hover */
+  body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 100vh;
+    z-index: 999;
+    cursor: pointer;
+  }
+  body:has(#sideNav:hover)::before {
+    width: 17rem;
   }
   #sideNav .navbar-brand {
     display: flex;
@@ -11038,6 +11065,17 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
+/* Align portfolio section title with content */
+#portfolio-carousel h2 {
+  padding-left: 0;
+}
+
+@media (min-width: 992px) {
+  #portfolio-carousel h2 {
+    padding-left: 3rem;
+  }
+}
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
@@ -11055,4 +11093,18 @@ section.resume-section .resume-section-content {
 /* Fix: prevent unwanted horizontal scroll / extra right margin */
 html, body {
   overflow-x: hidden;
+}
+
+/* Background with parallax effect */
+html {
+  background-image: url('/assets/img/texture-du-mur-beton-blanc_37874-13043.avif');
+  background-attachment: scroll;
+  background-size: 150%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  filter: grayscale(40%) brightness(0.75);
+}
+
+body {
+  background: transparent;
 }
