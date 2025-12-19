@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script data-goatcounter="https://marieelisabethcornet.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Travaux Choisis - Marie Elisabeth Cornet</title>
+        <link rel="icon" type="image/png" href="assets/img/petaleico.png" sizes="32x32" />
+        <link rel="shortcut icon" href="assets/img/petaleico.png" />
+        <!-- optionnel pour iOS -->
+        <link rel="apple-touch-icon" href="assets/img/petaleico-180.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+        /* Styles pour la galerie de travaux choisis */
+        .work-item {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-left: 4px solid var(--bs-primary);
+            background: var(--bs-gray-100);
+            border-radius: 0.25rem;
+        }
+        .work-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .work-image:hover {
+            transform: scale(1.02);
+        }
+        .work-title {
+            color: var(--bs-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .work-year {
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+        .work-description {
+            margin-top: 1rem;
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            line-height: 1.6;
+        }
+
+        /* Modal pour agrandir l'image */
+        .modal-content {
+            background: #000;
+            border: none;
+        }
+        .modal-body {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-body img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .modal-footer {
+            background: #222;
+            border-top: 1px solid #444;
+        }
+        .modal-footer .btn-close {
+            filter: brightness(0) invert(1);
+        }
+        /* Rendre le modal plus grand */
+        .modal-fullscreen-sm-down {
+            max-width: 95vw !important;
+        }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <span class="d-block d-lg-none"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="Profile" /></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#Bio">Bio</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#actualites">Actualités</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#portfolio-carousel">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="works.html">Travaux Choisis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio-pdf.html">Portfolio PDF</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- Selected Works Section -->
+            <section class="resume-section" id="works">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        Travaux
+                        <span class="text-primary">Choisis</span>
+                    </h1>
+                    <p class="lead mb-5" style="text-align:justify; text-justify:inter-word; hyphens:auto; margin-top: 1.5rem;">
+                        Une sélection de mes travaux récents en peinture, dessin et installation. Cliquez sur une image pour l'agrandir.
+                    </p>
+
+                    <!-- Works Gallery -->
+                    <div class="works-gallery">
+                        <!-- Work 1 -->
+                        <div class="work-item">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <img src="assets/img/images/img4.jpg" alt="Œuvre 1" class="work-image" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalImage(this)" />
+                                </div>
+                                <div class="col-lg-5">
+                                    <h3 class="work-title">Titre de l'œuvre</h3>
+                                    <p class="work-year">2024</p>
+                                    <p class="work-description">
+                                        Description détaillée de cette œuvre. Vous pouvez inclure des informations sur la technique utilisée, l'inspiration, les dimensions, ou tout autre détail pertinent sur cette création.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work 2 -->
+                        <div class="work-item">
+                            <div class="row">
+                                <div class="col-lg-7 order-lg-2">
+                                    <img src="assets/img/images/img108.jpg" alt="Œuvre 2" class="work-image" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalImage(this)" />
+                                </div>
+                                <div class="col-lg-5 order-lg-1">
+                                    <h3 class="work-title">Titre de l'œuvre 2</h3>
+                                    <p class="work-year">2024</p>
+                                    <p class="work-description">
+                                        Une autre description d'œuvre. Alternez les positions de l'image et du texte pour une meilleure présentation visuelle de votre galerie.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work 3 -->
+                        <div class="work-item">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <img src="assets/img/images/img9.jpg" alt="Œuvre 3" class="work-image" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalImage(this)" />
+                                </div>
+                                <div class="col-lg-5">
+                                    <h3 class="work-title">Titre de l'œuvre 3</h3>
+                                    <p class="work-year">2023</p>
+                                    <p class="work-description">
+                                        Description de votre troisième création. Cette mise en page permet une présentation élégante de vos meilleurs travaux avec des descriptions détaillées.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work 4 -->
+                        <div class="work-item">
+                            <div class="row">
+                                <div class="col-lg-7 order-lg-2">
+                                    <img src="assets/img/images/img5.jpg" alt="Œuvre 4" class="work-image" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalImage(this)" />
+                                </div>
+                                <div class="col-lg-5 order-lg-1">
+                                    <h3 class="work-title">Titre de l'œuvre 4</h3>
+                                    <p class="work-year">2023</p>
+                                    <p class="work-description">
+                                        Vous pouvez ajouter autant d'œuvres que vous le souhaitez. Duplicate ce bloc pour en ajouter d'autres. N'oubliez pas de mettre à jour les chemins des images et les descriptions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modal for enlarged image -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="" alt="Enlarged image" id="enlargedImage" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+        function setModalImage(imgElement) {
+            document.getElementById('enlargedImage').src = imgElement.src;
+            document.getElementById('enlargedImage').alt = imgElement.alt;
+        }
+        </script>
+    </body>
+</html>
