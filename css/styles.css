@@ -10,6 +10,36 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* The Seasons Font Family */
+@font-face {
+  font-family: "The Seasons";
+  src: url("../assets/fonts/Fontspring-DEMO-theseasons-reg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("../assets/fonts/Fontspring-DEMO-theseasons-it.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("../assets/fonts/Fontspring-DEMO-theseasons-lt.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("../assets/fonts/Fontspring-DEMO-theseasons-bd.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -93,7 +123,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: "The Seasons", var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -112,7 +142,7 @@ hr {
   opacity: 0.25;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -120,13 +150,19 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
   color: #343a40;
 }
-
+h1, .h1 {
+  margin-bottom: 0rem;
+  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  line-height: 1.2;
+  color: #343a40;
+}
 h1, .h1 {
   font-size: calc(1.725rem + 5.7vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 6rem;
+    font-size: 3.85rem;
   }
 }
 
@@ -489,8 +525,16 @@ progress {
 }
 
 .lead {
+  font-family: "The Seasons";
   font-size: 1.25rem;
   font-weight: 300;
+}
+
+/* Assurer que les titres et sous-titres du haut de page utilisent aussi The Seasons */
+h1.mb-0,h2.mb-5,
+.subheading,
+.subheading.mb-5 {
+  font-family: "The Seasons";
 }
 
 .display-1 {
@@ -10834,7 +10878,7 @@ body {
 @media (min-width: 992px) {
   body {
     padding-top: 0;
-    padding-left: 17rem;
+    padding-left: 0rem;
   }
 }
 h1, .h1,
@@ -10867,109 +10911,45 @@ p.lead {
   font-size: 1.5rem;
 }
 
-#sideNav {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-#/* Background image (fallback to an existing portfolio image if side-bg.jpg missing) */
-#sideNav::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: url('/assets/img/side-bg.jpg'), url('/assets/img/portfolio/Portfolio_page-1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: grayscale(60%) brightness(0.85);
-  background-color: rgba(189,56,56,0.12);
-}
-#sideNav > *,
-#sideNav .navbar-brand,
-#sideNav .navbar-collapse {
+/* Image "tableau maman" collée en haut à gauche de la section Bio */
+.resume-section#Bio {
   position: relative;
-  z-index: 1;
 }
-#sideNav .navbar-nav .nav-item .nav-link {
-  font-weight: 800;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
+.bio-left-img {
+  /* position fixed so the image stays in place while content scrolls over it */
+  position: fixed;
+  left: 0;
+  top: 0;
+  max-width: 49vw;
+  width: 49vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  z-index: 10;
+  filter: brightness(1);
+  transition: filter 0.1s ease-out;
 }
-#sideNav .navbar-toggler:focus {
-  outline-color: #d48a6e;
+.resume-section#Bio .resume-section-content {
+  margin-left: calc(49vw + 2rem);
+  padding-top: 25rem;
 }
 
-/* Remove focus outline on sidebar links to prevent persistent highlight */
-#sideNav .nav-link:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-@media (min-width: 992px) {
-  #sideNav {
-    padding-left: 0;
-    padding-right: 0;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 17rem;
-    height: 100vh;
-    /* make room for background image via pseudo-element */
-    background-color: transparent !important;
-  }
-  #sideNav .navbar-brand {
-    display: flex;
-    margin: auto auto 0;
-    padding: 0.5rem;
-  }
-  #sideNav .navbar-brand .img-profile {
-    max-width: 10rem;
-    max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
-  }
-  #sideNav .navbar-collapse {
-    display: flex;
-    align-items: flex-start;
-    flex-grow: 0;
-    width: 100%;
-    margin-bottom: auto;
-  }
-  #sideNav .navbar-collapse .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
-  #sideNav .navbar-collapse .navbar-nav .nav-item {
-    display: block;
-  }
-  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-    display: block;
-  }
-  /* Background image for the left banner (slightly greyed) */
-  #sideNav::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-image: url('/assets/img//images/img4.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* desaturate and darken slightly to get a 'grisée' look */
-    filter: grayscale(0.30 ) brightness(0.50);
-    /* fallback color when image missing */
-    background-color: rgba(189,56,56,1);
-  }
-  /* Keep the nav content above the background image */
-  #sideNav > *,
-  #sideNav .navbar-brand,
-  #sideNav .navbar-collapse {
+@media (max-width: 991.98px) {
+  .bio-left-img {
     position: relative;
-    z-index: 1;
+    left: auto;
+    top: auto;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .resume-section#Bio .resume-section-content {
+    margin-left: 0;
+    padding-top: 0.5rem;
   }
 }
+
+
 
 /* Mobile: remplacer le fond rouge par une image (img4) et masquer la photo de profil */
 @media (max-width: 991.98px) {
@@ -11028,14 +11008,47 @@ p.lead {
 section.resume-section {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  max-width: 75rem;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+  z-index: 5;
+  background-color: #ffffff;
 }
 section.resume-section .resume-section-content {
   width: 100%;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* La section Bio a un fond transparent pour voir l'image derrière */
+section.resume-section#Bio {
+  background-color: transparent;
+  z-index: 1;
+}
+
+/* La section Biographie recouvre l'image au scroll */
+section.resume-section#biographie {
+  z-index: 20;
+  background-color: #ffffff;
+  position: relative;
+  padding-top: 8rem;
+}
+
+/* Align portfolio section title with content */
+#portfolio-carousel h2 {
+  padding-left: 0;
+}
+
+@media (min-width: 992px) {
+  #portfolio-carousel h2 {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11045,8 +11058,8 @@ section.resume-section .resume-section-content {
 }
 @media (min-width: 992px) {
   section.resume-section {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
@@ -11055,4 +11068,98 @@ section.resume-section .resume-section-content {
 /* Fix: prevent unwanted horizontal scroll / extra right margin */
 html, body {
   overflow-x: hidden;
+}
+
+/* Barre de navigation horizontale (hamburger menu) */
+#topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background: transparent;
+}
+
+.menu-toggle {
+  width: 3rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.1s ease-out;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+/* Menu horizontal qui apparaît au hover */
+#horizontalMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  background: #f8f9fa;
+  color: #333;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1041;
+  gap: 3rem;
+  animation: slideDown 0.3s ease;
+}
+
+#horizontalMenu.show {
+  display: flex;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#horizontalMenu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+#horizontalMenu a:hover {
+  color: #d48a6e;
+}
+
+/* Background with parallax effect */
+html {
+  background-color: #ffffff;
+}
+
+body {
+  background: transparent;
 }

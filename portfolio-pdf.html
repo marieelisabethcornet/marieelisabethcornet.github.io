@@ -16,10 +16,61 @@
             width: 100%;
             height: 100vh;
         }
+        
+        @media (min-width: 992px) {
+          embed {
+            margin-top: 3rem;
+            height: calc(100vh - 3rem);
+          }
+        }
     </style>
 </head>
 
 <body>
+    
+    
     <embed src="assets/img/pdf/MonPortfolio.pdf" type="application/pdf">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const topNav = document.getElementById('topNav');
+            const horizontalMenu = document.getElementById('horizontalMenu');
+            let menuTimeout;
+
+            if (topNav && horizontalMenu) {
+                // Afficher le menu au survol
+                topNav.addEventListener('mouseenter', () => {
+                    clearTimeout(menuTimeout);
+                    horizontalMenu.classList.add('show');
+                });
+
+                // Cacher le menu quand on quitte
+                topNav.addEventListener('mouseleave', () => {
+                    menuTimeout = setTimeout(() => {
+                        horizontalMenu.classList.remove('show');
+                    }, 300);
+                });
+
+                horizontalMenu.addEventListener('mouseenter', () => {
+                    clearTimeout(menuTimeout);
+                    horizontalMenu.classList.add('show');
+                });
+
+                horizontalMenu.addEventListener('mouseleave', () => {
+                    menuTimeout = setTimeout(() => {
+                        horizontalMenu.classList.remove('show');
+                    }, 300);
+                });
+
+                // Fermer le menu quand on clique sur un lien
+                const menuLinks = horizontalMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        horizontalMenu.classList.remove('show');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
