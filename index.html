@@ -40,42 +40,44 @@
         }
         #portfolioCarousel .carousel-caption { background: rgba(0,0,0,0.45); padding: 0.75rem 1rem; border-radius: .25rem; }
         @media (max-width: 768px) { #portfolioCarousel .carousel-item { height: 30vh; } }
-
-        /* Mobile navbar-brand image sizing (show profile image like desktop) */
-        @media (max-width: 991.98px) {
-          #sideNav .navbar-brand .img-profile { max-width: 3.5rem; max-height: 3.5rem; }
-          nav#sideNav .navbar-brand { display:flex; justify-content:center; align-items:center; }
-        }
+        
         </style>
     </head>
     <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <!-- show profile image on mobile instead of text -->
-                <span class="d-block d-lg-none"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="Profile" /></span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Bio">Bio</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#actualites">Actualités</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="works.html">Artworks</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio-carousel">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio-pdf.html">Portfolio PDF</a></li>
-                </ul>
-            </div>
+        <!-- Nouvelle Navigation Horizontale en Haut -->
+        <div id="topNav">
+          <div class="menu-toggle" id="menuToggle1">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        
+        <!-- Menu horizontal qui apparaît -->
+        <nav id="horizontalMenu">
+          <a class="js-scroll-trigger" href="#Bio">Bio</a>
+          <a class="js-scroll-trigger" href="#actualites">Actualités</a>
+          <a href="works.html">Artworks</a>
+          <a class="js-scroll-trigger" href="#portfolio-carousel">Portfolio</a>
+          <a href="portfolio-pdf.html">Portfolio PDF</a>
         </nav>
+
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- About-->
             <section class="resume-section" id="Bio">
+                <!-- Image collée à gauche en haut -->
+                <img src="assets/tableau maman.jpeg" alt="Tableau Maman" class="bio-left-img" />
                 <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Marie Elisabeth
-                        <span class="text-primary">Cornet</span>
-                    </h1>
+                    <h1 class="mb-0">Marie Elisabeth Cornet</h1>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            <!-- biographie -->
+
+            <section class="resume-section" id="biographie">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Biographie</h2>
                     <div class="subheading mb-5">
                         30 rue de Vincennes · 93100 Montreuil · +33 6 15 65 37 26 ·
                         <a href="mailto:marieelisabeth.cornet@gmail.com">marieelisabeth.cornet@gmail.com</a>
@@ -90,8 +92,7 @@
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
-            
+
             <!-- Actualités -->
             <section class="resume-section" id="actualites">
                 <div class="resume-section-content">
