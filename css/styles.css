@@ -11176,6 +11176,63 @@ html, body {
   color: #d48a6e;
 }
 
+/* --- SUR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+  
+  #topNav {
+    z-index: 1050; /* Doit être au-dessus de tout */
+    background: transparent; /* Garde le hamburger visible sur l'image */
+  }
+
+  .menu-toggle {
+    z-index: 1060; /* Le bouton doit rester cliquable au-dessus du menu */
+  }
+
+  #horizontalMenu {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Plein écran */
+    background: white; /* Fond opaque pour cacher l'image de bio en dessous */
+    z-index: 1045; /* Entre le bouton et l'image */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #horizontalMenu.show {
+    display: flex; /* S'affiche quand JS l'active */
+  }
+
+  /* On s'assure que l'image de bio ne passe pas devant */
+  .bio-left-img {
+    z-index: 1; 
+  }
+}
+/* Animation du Hamburger en Croix */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background-color: #d48a6e; /* Optionnel: change la couleur une fois ouvert */
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0; /* Cache la barre du milieu */
+  transform: translateX(-20px);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background-color: #d48a6e;
+}
+
+/* Assure-toi que le toggle est bien visible par dessus le menu blanc */
+.menu-toggle {
+  z-index: 2000;
+}
+
 /* Background with parallax effect */
 html {
   background-color: #ffffff;
