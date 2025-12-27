@@ -725,6 +725,11 @@ h1.mb-0,h2.mb-5,
     max-width: 1320px;
   }
 }
+@media (min-width: 1600px) {
+  .container, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1550px;
+  }
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -11007,8 +11012,8 @@ p.lead {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 3rem;
+  width: 3rem;
   background-color: #495057;
   color: #fff;
   border-radius: 100%;
@@ -11042,9 +11047,14 @@ section.resume-section {
 }
 section.resume-section .resume-section-content {
   width: 100%;
-  max-width: 50rem;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 1400px) {
+  section.resume-section .resume-section-content {
+    max-width: 60%;
+  }
 }
 
 /* La section Bio a un fond transparent pour voir l'image derrière */
@@ -11240,4 +11250,47 @@ html {
 
 body {
   background: transparent;
+}
+
+.bio-portrait {
+    border-radius: 4px; /* Un léger arrondi pour le style */
+    width: 100%;
+    max-width: 400px; /* Évite que l'image soit géante sur tablette */
+    display: block;
+    margin: 0 auto;   /* Centre l'image sur mobile */
+}
+
+@media (min-width: 992px) {
+    .bio-portrait {
+        margin: 0;    /* Aligne à gauche sur PC */
+        max-width: 100%; 
+    }
+}
+
+@media (min-width: 992px) {
+    /* Aligne le haut de la colonne de l'image avec le haut du texte */
+    .row.align-items-start {
+        display: flex;
+        align-items: flex-start !important;
+    }
+
+    /* Supprime toute marge haute sur le premier élément de texte pour l'alignement */
+    #biographie h2, 
+    #biographie .resume-section-content h2 {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        line-height: 1; /* Optionnel : réduit l'espace au-dessus des lettres capitales */
+    }
+
+    /* Supprime toute marge haute sur l'image */
+    .bio-portrait {
+        margin-top: 0 !important;
+    }
+}
+.resume-section#contact {
+  min-height: auto !important;
+  .resume-section-content {
+    padding-left: 10rem;
+    max-width: 100% !important;
+}
 }
