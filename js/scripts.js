@@ -8,6 +8,7 @@
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
+    
 
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
@@ -68,8 +69,14 @@ window.addEventListener('DOMContentLoaded', event => {
                 } else if (biographieTop < fadeEnd) {
                     if (h1Title) h1Title.style.opacity = '0';
                     if (bioImage) bioImage.style.filter = 'brightness(0.3)';
-                    if (menuToggle) menuToggle.style.opacity = '0';
-                    if (menuToggle) menuToggle.style.pointerEvents = 'none';
+                    if (window.innerWidth > 768) {
+                        if (menuToggle) menuToggle.style.opacity = '0';
+                        if (menuToggle) menuToggle.style.pointerEvents = 'none';
+                    } else {
+                        if (menuToggle) menuToggle.style.opacity = '1';
+                        if (menuToggle) menuToggle.style.pointerEvents = 'auto';
+                    }
+                    
                 } else {
                     // Interpolation linéaire entre fadeStart et fadeEnd
                     const range = fadeStart - fadeEnd;
@@ -103,13 +110,14 @@ window.addEventListener('DOMContentLoaded', event => {
                 const bioBottom = bioSection.getBoundingClientRect().bottom;
                 const wasBioLeftScreen = bioLeftScreen;
                 bioLeftScreen = bioBottom < 0; // Bio est complètement sortie du haut
-                
-                if (bioLeftScreen && !wasBioLeftScreen) {
-                    // Bio vient de sortir - afficher le menu en permanence
-                    horizontalMenu.classList.add('show');
-                } else if (!bioLeftScreen && wasBioLeftScreen) {
-                    // Bio est de retour - masquer le menu jusqu'au hover
-                    horizontalMenu.classList.remove('show');
+                if (window.innerWidth > 768) { // Seulement pour les écrans larges
+                    if (bioLeftScreen && !wasBioLeftScreen) {
+                        // Bio vient de sortir - afficher le menu en permanence
+                        horizontalMenu.classList.add('show');
+                    } else if (!bioLeftScreen && wasBioLeftScreen) {
+                        // Bio est de retour - masquer le menu jusqu'au hover
+                        horizontalMenu.classList.remove('show');
+                    }
                 }
             }
         });
@@ -165,6 +173,35 @@ window.addEventListener('DOMContentLoaded', event => {
                 }
             });
         });
+
+// GESTION DU CLIC MOBILE (Hamburger)
+menuToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            horizontalMenu.classList.toggle('show');
+            toggle.classList.toggle('active'); // Pour l'animation en croix
+            
+            // Empêche le défilement du corps quand le menu est ouvert
+            if (horizontalMenu.classList.contains('show')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+});
+
+// MODIFICATION DU LISTENER DE LIENS EXISTANT
+const menuLinksMobile = horizontalMenu.querySelectorAll('a');
+menuLinksMobile.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            horizontalMenu.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            menuToggles.forEach(t => t.classList.remove('active'));
+        }
+    });
+});
     }
 
 });

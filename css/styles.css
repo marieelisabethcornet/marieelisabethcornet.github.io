@@ -10947,20 +10947,26 @@ p.lead {
   padding-top: 25rem;
 }
 
+/* --- CORRECTION MOBILE --- */
 @media (max-width: 768px) {
   .resume-section#Bio {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; 
+    display: block; /* On repasse en flux normal */
   }
-  .bio-left-img .resume-section-content {
-    width: 100%;
-  }
+
   .bio-left-img {
-    order: 1;
+    position: relative; /* CRUCIAL : On annule le "fixed" pour le mobile */
+    width: 100%;        /* Prend toute la largeur */
+    height: auto;       /* Hauteur proportionnelle à l'image */
+    max-width: 100%;    /* Annule le 49vw */
+    z-index: 1;
   }
-  .resume-section-content {
-    order: 2;
-    padding-top:  2rem;
+
+  .resume-section#Bio .resume-section-content {
+    margin-left: 0;     /* Annule la marge de gauche du PC */
+    padding-top: 2rem;  /* Espace raisonnable sous l'image */
+    width: 100%;
+    text-align: center; /* Optionnel : pour le look portfolio */
   }
 }
 
@@ -11168,6 +11174,63 @@ html, body {
 
 #horizontalMenu a:hover {
   color: #d48a6e;
+}
+
+/* --- SUR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+  
+  #topNav {
+    z-index: 1050; /* Doit être au-dessus de tout */
+    background: transparent; /* Garde le hamburger visible sur l'image */
+  }
+
+  .menu-toggle {
+    z-index: 1060; /* Le bouton doit rester cliquable au-dessus du menu */
+  }
+
+  #horizontalMenu {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Plein écran */
+    background: white; /* Fond opaque pour cacher l'image de bio en dessous */
+    z-index: 1045; /* Entre le bouton et l'image */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #horizontalMenu.show {
+    display: flex; /* S'affiche quand JS l'active */
+  }
+
+  /* On s'assure que l'image de bio ne passe pas devant */
+  .bio-left-img {
+    z-index: 1; 
+  }
+}
+/* Animation du Hamburger en Croix */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background-color: #d48a6e; /* Optionnel: change la couleur une fois ouvert */
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0; /* Cache la barre du milieu */
+  transform: translateX(-20px);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background-color: #d48a6e;
+}
+
+/* Assure-toi que le toggle est bien visible par dessus le menu blanc */
+.menu-toggle {
+  z-index: 2000;
 }
 
 /* Background with parallax effect */
