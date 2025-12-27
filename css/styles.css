@@ -160,7 +160,7 @@ h1, .h1 {
 /* Mobile (écran < 768px) */
 @media (max-width: 767.98px) {  
     .h1, h1 {
-        font-size: 14px;
+        font-size: 25px;
     }
 }
 
@@ -10947,18 +10947,20 @@ p.lead {
   padding-top: 25rem;
 }
 
-@media (max-width: 991.98px) {
-  .bio-left-img {
-    position: relative;
-    left: auto;
-    top: auto;
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 1rem;
+@media (max-width: 768px) {
+  .resume-section#Bio {
+    flex-direction: column;
+    align-items: center;
   }
-  .resume-section#Bio .resume-section-content {
-    margin-left: 0;
-    padding-top: 0.5rem;
+  .bio-left-img .resume-section-content {
+    width: 100%;
+  }
+  .bio-left-img {
+    order: 1;
+  }
+  .resume-section-content {
+    order: 2;
+    padding-top:  2rem;
   }
 }
 
