@@ -174,34 +174,40 @@ window.addEventListener('DOMContentLoaded', event => {
             });
         });
 
-// GESTION DU CLIC MOBILE (Hamburger)
-menuToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            horizontalMenu.classList.toggle('show');
-            toggle.classList.toggle('active'); // Pour l'animation en croix
-            
-            // Empêche le défilement du corps quand le menu est ouvert
-            if (horizontalMenu.classList.contains('show')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        }
-    });
-});
+        // --- GESTION DU CLIC MOBILE & SYNCHRONISATION ---
+        menuToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // On bascule l'affichage du menu
+                horizontalMenu.classList.toggle('show');
 
-// MODIFICATION DU LISTENER DE LIENS EXISTANT
-const menuLinksMobile = horizontalMenu.querySelectorAll('a');
-menuLinksMobile.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            horizontalMenu.classList.remove('show');
-            document.body.style.overflow = 'auto';
-            menuToggles.forEach(t => t.classList.remove('active'));
-        }
-    });
-});
+                // SYNCHRONISATION CRUCIALE : 
+                // La croix (active) doit TOUJOURS suivre l'état de 'show'
+                if (horizontalMenu.classList.contains('show')) {
+                    toggle.classList.add('active');
+                    if (window.innerWidth <= 768) {
+                        document.body.style.overflow = 'hidden'; // Bloque scroll mobile
+                    }
+                } else {
+                    toggle.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // FERMETURE PROPRE LORS DU CLIC SUR UN LIEN
+        const allMenuLinks = horizontalMenu.querySelectorAll('a');
+        allMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                horizontalMenu.classList.remove('show');
+                document.body.style.overflow = 'auto';
+                // On retire la croix de tous les boutons toggles
+                menuToggles.forEach(t => t.classList.remove('active'));
+            });
+        });
+
+    
     }
 
 });

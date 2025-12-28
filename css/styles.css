@@ -11231,12 +11231,8 @@ html, body {
   background-color: #d48a6e; /* Optionnel: change la couleur une fois ouvert */
 }
 
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0; /* Cache la barre du milieu */
-  transform: translateX(-20px);
-}
 
-.menu-toggle.active span:nth-child(3) {
+.menu-toggle.active span:nth-child(2) {
   transform: translateY(-9px) rotate(-45deg);
   background-color: #d48a6e;
 }
