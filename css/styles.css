@@ -11240,6 +11240,7 @@ html, body {
 /* Assure-toi que le toggle est bien visible par dessus le menu blanc */
 .menu-toggle {
   z-index: 2000;
+  cursor: pointer;
 }
 
 /* Background with parallax effect */
