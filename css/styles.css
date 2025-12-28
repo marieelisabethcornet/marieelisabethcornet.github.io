@@ -142,13 +142,20 @@ hr {
   opacity: 0.25;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2 {
+h6, .h6, h5, .h5, h4, .h4, h2, .h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   line-height: 1.2;
   color: #343a40;
+}
+h3,.h3 {
+  font-size: calc(1.325rem + 0.9vw);
+  text-transform: none !important;
+  color: #383838;
+  text-shadow: #555555ab 1px 1px 2px;
+  font-style: italic;
 }
 h1, .h1 {
   margin-bottom: 0rem;
@@ -11298,3 +11305,57 @@ body {
     max-width: 100% !important;
 }
 }
+/* Effet de zoom au survol des images collection*/
+
+/* Conteneur pour éviter que l'image ne déborde en grossissant */
+.hover-zoom {
+    overflow: visible;
+    border-radius: 8px; /* Optionnel : arrondit les angles */
+    display: block;
+}
+
+.hover-zoom img {
+    transition: transform 0.5s ease, filter 0.5s ease; /* Animation fluide */
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.01); /* Grossit de 1% */
+    filter: opacity(0.8); /* Légèrement plus lumineux */
+    
+}
+
+
+/* Style des éléments du portfolio */
+.portfolio-item {
+    position: relative;
+}
+
+/* Style des légendes sous les dessins */
+.caption {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666; /* Gris doux */
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+/* Décalages vers le haut */
+.mt-neg-5 { margin-top: -5rem !important; }
+.mt-neg-10 { margin-top: -10rem !important; }
+
+.ms-neg-5 { margin-left: -5rem !important; }
+.ms-neg-10 { margin-left: -10rem !important; }
+
+.me-neg-5 { margin-right: -5rem !important; }
+.me-neg-10 { margin-right: -10rem !important; }
+
+/* Décalages vers le bas */
+.mt-pos-5 { margin-top: 5rem !important; }
+.mt-pos-10 { margin-top: 10rem !important; }
+
+/* Pour que ça ne s'applique que sur ordinateur (PC) */
+@media (min-width: 992px) {
+    .mt-lg-neg-15 { margin-top: -15rem !important; }
+}
+
