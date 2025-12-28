@@ -10968,11 +10968,14 @@ p.lead {
   }
 
   .resume-section#Bio .resume-section-content {
-    margin-left: 0;     /* Annule la marge de gauche du PC */
-    padding-top: 2rem;  /* Espace raisonnable sous l'image */
-    width: 100%;
-    text-align: center; /* Optionnel : pour le look portfolio */
+    margin-left: 0 !important;     /* Annule la marge de gauche du PC */
+    margin-right: 0 !important;
+    padding-top: 0;  /* Espace raisonnable sous l'image */
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important; /* Optionnel : pour le look portfolio */
   }
+  
 }
 
 
