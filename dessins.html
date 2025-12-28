@@ -19,7 +19,8 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        
+                <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
         
     </head>
     <body id="page-top">
@@ -49,22 +50,22 @@
                     <h3 class="mb-4">Danceurs</h3>
 
                     <div class="row mb-5">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 portfolio-link" data-aos="fade-up" data-aos-duration="1200">
                                 <img src="assets/img/images/img34.jpg" class="img-fluid border-radius-3">
                                 <p class="caption">Le trait comme une écriture automatique.</p>
                         </div>
-                        <div class="col-lg-5 mt-pos-5 ">
+                        <div class="col-lg-5 mt-pos-5 portfolio-link" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1200">
                                 <img src="assets/img/images/img35.jpg" class="img-fluid border-radius-3">
                                 <p class="caption">Le dessin comme un espace de liberté.</p>
                         </div>
                     </div>
 
                     <div class="row mb-5">
-                        <div class="col-lg-5 me-4">
+                        <div class="col-lg-5 me-4 portfolio-link" data-aos="fade-up" data-aos-duration="1200">
                                 <img src="assets/img/images/img33.jpg" class="img-fluid border-radius-3">
                                 <p class="caption">Le vide comme prolongement du dessin.</p>
                         </div>
-                        <div class="col-lg-6 mt-5">
+                        <div class="col-lg-6 mt-5 portfolio-link" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1200">
                                 <img src="assets/img/images/img38.jpg" class="img-fluid border-radius-3">
                                 <p class="caption">Le dessin comme une exploration de soi.</p>
                         </div>
@@ -99,4 +100,14 @@
         }
         </script>
     </body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init({
+    // Paramètres que tu peux modifier :
+    duration: 1200, // Durée de l'animation en millisecondes (1.2s)
+    once: true,     // L'animation ne se joue qu'une seule fois (au premier scroll)
+    easing: 'ease-in-out', // Courbe d'accélération fluide
+    offset: 100,    // Déclenche l'anim 100px avant que l'élément soit visible
+  });
+</script>
 </html>

@@ -19,29 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <style>
-        /* Styles pour le diaporama portfolio */
-        #portfolio-carousel { padding: 4rem 0; background: var(--bs-gray-100); }
-        #portfolioCarousel .carousel-item { height: 110vh; min-height: 600px; }
-        /* Make rotated images fill the whole slide (cover) */
-        #portfolioCarousel .carousel-item {
-            height: 110vh; min-height: 600px; position: relative; overflow: hidden;
-        }
-        @media (max-width: 768px) { #portfolioCarousel .carousel-item { height: 110vh; } }
-
-        #portfolioCarousel .carousel-item img {
-            position: absolute;
-            top: 100%; left: 100%;
-            width: 100%; height: 100%;
-            object-fit: contain;
-            transform: translate(-100%, -100%) rotate(90deg); /* rotate 270deg visually */
-            transform-origin: center center;
-            display: block;
-        }
-        #portfolioCarousel .carousel-caption { background: rgba(0,0,0,0.45); padding: 0.75rem 1rem; border-radius: .25rem; }
-        @media (max-width: 768px) { #portfolioCarousel .carousel-item { height: 30vh; } }
-        
-        </style>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body id="page-top">
         <!-- Nouvelle Navigation Horizontale en Haut -->
@@ -94,23 +72,29 @@
             <section class="resume-section" id="collection">
                 <div class="resume-section-content">
                     <div class="row align-items-center mb-5">
-                        <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+                        <div class="col-12 col-lg-8 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1200">
+                            <a href="dessins.html" class="portfolio-link">
                             <div class="hover-zoom">
-                                <img src="assets/img/images/singe_ombre.png" class="img-fluid w-75 mx-auto d-block">
+                                <img src="assets/img/images/singe_ombre.png" class="img-fluid w-50 mx-auto d-block">
                             </div>
+                            </a>
                         </div>
-                        <div class="col-12 col-lg-4">
-                            <h3>Dessins</h3>
+                        <div class="col-12 col-lg-4" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1700">
+                            <a href="dessins.html" class="portfolio-link">
+                            <div class="hover-zoom">
+                                <h3>Dessins</h3>
+                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="row align-items-center flex-lg-row-reverse">
-                        <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+                        <div class="col-12 col-lg-8 mb-4 mb-lg-0" data-aos="fade-left" data-aos-duration="1200">
                             <div class="hover-zoom">
                                 <img src="assets/img/images/img29.jpg" class="img-fluid w-75 mx-auto d-block border-radius-3 shadow-sm">
                             </div>
                         </div>
-                        <div class="col-12 col-lg-4 text-lg-end">
-                            <h3><a href="dessins.html">Dessins</a></h3>
+                        <div class="col-12 col-lg-4 text-lg-end" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1700">
+                            <h3>Dessins</h3>
                         </div>
                     </div>
                 </div>
@@ -225,5 +209,15 @@
             })();
         })();
         </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init({
+    // Paramètres que tu peux modifier :
+    duration: 1200, // Durée de l'animation en millisecondes (1.2s)
+    once: true,     // L'animation ne se joue qu'une seule fois (au premier scroll)
+    easing: 'ease-in-out', // Courbe d'accélération fluide
+    offset: 100,    // Déclenche l'anim 100px avant que l'élément soit visible
+  });
+</script>
     </body>
 </html>

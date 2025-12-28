@@ -11062,7 +11062,7 @@ section.resume-section .resume-section-content {
   margin-right: auto;
 }
 @media (min-width: 1400px) {
-  section.resume-section .resume-section-content {
+  section.resume-section#biographie .resume-section-content {
     max-width: 60%;
   }
 }
@@ -11324,6 +11324,15 @@ body {
     
 }
 
+.hover-zoom h3 {
+    transition: all 0.5s ease;
+}
+
+.hover-zoom:hover h3 {
+    color: royalblue; /* Change la couleur du texte au survol */
+    transform: scale(1.01); /* Grossit légèrement le texte aussi */
+}
+
 
 /* Style des éléments du portfolio */
 .portfolio-item {
@@ -11357,5 +11366,39 @@ body {
 /* Pour que ça ne s'applique que sur ordinateur (PC) */
 @media (min-width: 992px) {
     .mt-lg-neg-15 { margin-top: -15rem !important; }
+}
+
+/* Supprime le soulignement et garde la couleur du texte originale */
+.portfolio-link {
+    text-decoration: none !important;
+    display: block; /* Permet au lien de prendre toute la place de l'image */
+    color: inherit; 
+}
+
+.portfolio-link:hover .caption {
+    color: #000; /* Le texte devient plus noir quand on survole l'image */
+    text-decoration: none;
+}
+.portfolio-link .caption{
+    transition: all 0.5s ease; /* Animation fluide de la couleur */
+}
+
+/* Personnalisation de l'animation AOS */
+[data-aos="fade-right"] {
+    transform: translateX(-100px); /* Distance du glissement */
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(100px);
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+[data-aos="fade-up"] {
+    transform: translateY(100px);
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+[data-aos="fade-down"] {
+    transform: translateY(-100px);
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
