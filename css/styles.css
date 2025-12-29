@@ -9930,6 +9930,9 @@ textarea.form-control-lg {
   .text-lg-center {
     text-align: center !important;
   }
+  .vh-lg-95 {
+    height: 95vh !important;
+  } 
 }
 @media (min-width: 1200px) {
   .float-xl-start {
