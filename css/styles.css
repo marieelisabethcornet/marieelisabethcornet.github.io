@@ -7388,6 +7388,8 @@ textarea.form-control-lg {
 }
 .vh-95 {
   height: 95vh !important;
+  object-fit: contain !important; /* MAIS elle ne se déforme pas, elle reste entière */
+  object-position: center !important; /* Elle reste centrée dans son espace */
 }
 
 .min-vh-100 {
@@ -7687,6 +7689,22 @@ textarea.form-control-lg {
 .mt-5 {
   margin-top: 3rem !important;
 }
+.mt-6{
+  margin-top: 4rem !important;
+}
+.mt-7{
+  margin-top: 5rem !important;
+}
+.mt-8 {
+  margin-top: 6rem !important;
+}
+.mt-10{
+  margin-top: 10rem !important;
+}
+.mt-20{
+  margin-top: 20rem !important;
+}
+
 
 .mt-auto {
   margin-top: auto !important;
@@ -9634,6 +9652,50 @@ textarea.form-control-lg {
   .mt-lg-5 {
     margin-top: 3rem !important;
   }
+  .mt-lg-6{
+  margin-top: 4rem !important;
+}
+.mt-lg-7{
+  margin-top: 5rem !important;
+}
+.mt-lg-8 {
+  margin-top: 6rem !important;
+}
+.mt-lg-10{
+  margin-top: 10rem !important;
+}
+.mt-lg-20{
+  margin-top: 20rem !important;
+}
+.mt-lg-neg-1{
+  margin-top: -0.25rem !important;
+}
+.mt-lg-neg-2{
+  margin-top: -0.5rem !important;
+}
+.mt-lg-neg-3{
+  margin-top: -0.75rem !important;
+}
+.mt-lg-neg-4{
+  margin-top: -1rem !important;
+}
+.mt-lg-neg-5{
+  margin-top: -1.25rem !important;
+}
+.mt-lg-neg-6{
+  margin-top: -1.5rem !important;
+}
+
+.mt-lg-neg-7{
+  margin-top: -2rem !important;
+}
+.mt-lg-neg-10{
+  margin-top: -2.5rem !important;
+}
+.mt-lg-neg-20{
+  margin-top: -6rem !important;
+}
+
   .mt-lg-auto {
     margin-top: auto !important;
   }
