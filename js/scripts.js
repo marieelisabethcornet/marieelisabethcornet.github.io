@@ -207,21 +207,6 @@ window.addEventListener('DOMContentLoaded', event => {
             });
         });
         
-        document.addEventListener('DOMContentLoaded', function () {
-    var navbarToggler = document.querySelector('.navbar-toggler');
-    var responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    
-    // Force la fermeture propre au clic sur un lien
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-});
 
     
     }
