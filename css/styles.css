@@ -7386,6 +7386,9 @@ textarea.form-control-lg {
 .vh-100 {
   height: 100vh !important;
 }
+.vh-95 {
+  height: 95vh !important;
+}
 
 .min-vh-100 {
   min-height: 100vh !important;
@@ -7711,6 +7714,12 @@ textarea.form-control-lg {
 
 .me-5 {
   margin-right: 3rem !important;
+}
+.me-6 {
+  margin-right: 4rem !important;
+}
+.me-7{
+  margin-right: 5rem !important;
 }
 
 .me-auto {
@@ -11376,6 +11385,9 @@ body {
     text-decoration: none !important;
     display: block; /* Permet au lien de prendre toute la place de l'image */
     color: inherit; 
+}
+.portfolio-link img {
+        border-radius: 3px;
 }
 
 .portfolio-link:hover .caption {
