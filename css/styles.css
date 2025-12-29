@@ -9667,6 +9667,9 @@ textarea.form-control-lg {
   .mb-lg-5 {
     margin-bottom: 3rem !important;
   }
+  .mb-lg-10 {
+    margin-bottom: 6rem !important;
+  }
   .mb-lg-auto {
     margin-bottom: auto !important;
   }
