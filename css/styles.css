@@ -11401,4 +11401,35 @@ body {
     transform: translateY(-100px);
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
+.btn-art-back {
+    display: inline-block;
+    padding: 14px 42px;
+    border: 1px solid #333; /* Cadre fin noir/anthracite */
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    background-color: transparent;
+}
 
+.btn-art-back:hover {
+    background-color: #333; /* Le bouton se remplit au survol */
+    color: #fff;            /* Le texte devient blanc */
+    letter-spacing: 4px;    /* Les lettres s'écartent légèrement */
+    text-decoration: none;
+}
+
+.image-presentation{
+  border-radius: 4px; /* Un léger arrondi pour le style */
+  width: 100%;
+  max-width: 900px; /* Évite que l'image soit géante sur tablette */
+  display: block;
+  margin: 0 auto;   /* Centre l'image sur mobile */
+}
+
+.radius-3
+{
+  border-radius: 3px !important;
+}
