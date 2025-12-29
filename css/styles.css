@@ -9717,6 +9717,15 @@ textarea.form-control-lg {
   .me-lg-5 {
     margin-right: 3rem !important;
   }
+  .me-lg-6 {
+    margin-right: 4rem !important;
+  }
+  .me-lg-7 {
+    margin-right: 5rem !important;
+  }
+  .me-lg-8 {
+    margin-right: 5.5rem !important;
+  }
   .me-lg-auto {
     margin-right: auto !important;
   }
@@ -9863,6 +9872,20 @@ textarea.form-control-lg {
   }
   .pt-lg-5 {
     padding-top: 3rem !important;
+  }
+  .pt-lg-10 {
+    padding-top: 10vh !important;
+  }
+  .pt-lg-20 {
+    padding-top: 20vh !important;
+  }
+  .pt-lg-neg-20 {
+    padding-top: -20vh !important;
+  }
+  .pt-lg-neg-10 {
+    padding-top: -10vh !important;
+  }
+  
   }
   .pe-lg-0 {
     padding-right: 0 !important;
