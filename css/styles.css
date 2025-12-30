@@ -9698,6 +9698,14 @@ textarea.form-control-lg {
 .mt-lg-neg-20{
   margin-top: -6rem !important;
 }
+.vh-lg-95{
+  height: auto !important;
+  width: auto !important;
+  max-height: 95vh !important; 
+  display: block;
+  object-fit: contain !important; /* MAIS elle ne se déforme pas, elle reste entière */
+  object-position: center !important; /* Elle reste centrée dans son espace */
+}
 
   .mt-lg-auto {
     margin-top: auto !important;
@@ -9889,7 +9897,7 @@ textarea.form-control-lg {
     padding-top: -10vh !important;
   }
   
-  }
+  
   .pe-lg-0 {
     padding-right: 0 !important;
   }
@@ -10470,6 +10478,7 @@ textarea.form-control-lg {
   .text-xl-center {
     text-align: center !important;
   }
+
 }
 @media (min-width: 1400px) {
   .float-xxl-start {
