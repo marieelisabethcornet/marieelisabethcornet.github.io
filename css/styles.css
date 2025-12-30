@@ -11551,6 +11551,7 @@ body {
     text-decoration: none;
 }
 
+
 .image-presentation{
   border-radius: 4px; /* Un léger arrondi pour le style */
   width: 100%;
@@ -11562,4 +11563,12 @@ body {
 .radius-3
 {
   border-radius: 3px !important;
+}
+
+.img-frame-art {
+    border: 1px solid #333; /* Même bordure que ton bouton */
+    padding: 10px;          /* L'espace entre le cadre et l'image */
+    background-color: #fff; /* Fond blanc pour l'espace vide */
+    transition: all 0.4s ease;
+    display: inline-block;  /* Important pour que le cadre colle à l'image */
 }
