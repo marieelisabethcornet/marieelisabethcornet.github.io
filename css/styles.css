@@ -9893,6 +9893,9 @@ textarea.form-control-lg {
   .pt-lg-neg-20 {
     padding-top: -20vh !important;
   }
+  .pt-lg-neg-15 {
+    padding-top: -15vh !important;
+  }
   .pt-lg-neg-10 {
     padding-top: -10vh !important;
   }
@@ -11474,10 +11477,28 @@ body {
 .caption {
     margin-top: 15px;
     font-size: 0.85rem;
-    font-style: italic;
+    font-family: 'Arial', Arial, sans-serif;
+    font-style: normal;
     color: #666; /* Gris doux */
     font-weight: 300;
     letter-spacing: 0.05rem;
+}
+.detail{
+    font-size: 0.80rem;
+    font-family: 'Arial', Arial, sans-serif;
+    font-style: normal;
+    color: #777; /* Gris moyen pour les détails */
+    font-weight: 150;
+    margin-top: 3px;
+}
+
+.dimension{
+    font-size: 0.75rem;
+    font-family: 'Arial Italic', Arial, sans-serif;
+    font-style: italic;
+    color: #999; /* Gris plus clair pour les dimensions */
+    font-weight: 200;
+    margin-top: 5px;
 }
 
 /* Décalages vers le haut */
